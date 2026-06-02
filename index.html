@@ -50,14 +50,55 @@
         #ui>* {
             pointer-events: auto
         }
+#cT{
+     font-size: 7px;
+            color: #a24234;
+            font-family: 'Press Start 2P', cursive;
+            text-transform: bold;
+}
+#dC { 
+  color: #421c1b; 
+  font-family: 'Press Start 2P', cursive; 
+  font-weight: semi-bold; 
+}
+
+#dC b {
+  color: #c46c62; /* Substitua pela cor que desejar */
+}
 
         .hp {
-            background: rgba(16, 10, 24, .92);
+            background: rgba(16, 10, 24, .94);
             border: 2px solid #503858;
             border-radius: 3px;
             padding: 4px 8px;
             color: #deeed6;
             font-size: 14px
+        }
+         .idk {
+            background: rgba(16, 10, 24, .0);
+             justify-content: center!important;
+            align-content: center!important;
+            color: #421c1b;
+            font-size: 14px;
+             text-align: center;
+        }
+
+        #baby {
+            position: absolute;
+            bottom: -65px;
+            right:25px;
+            color: #421c1b;
+            font-size: 11px;
+            background-image: url('https://i.postimg.cc/7ZGWGKcR/image.png');
+            background-size: 100% 100%;
+            /* Força a imagem a preencher a caixa */
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            padding: 10px 15px;
+            display: inline-block;
+                justify-content: center!important;
+            align-content: center!important;
         }
 
         #hud {
@@ -129,8 +170,9 @@
 
         #clock {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 4px
+            gap: 2px;
         }
 
         #clock span {
@@ -174,7 +216,7 @@
             right: 2px;
             font-size: 7px;
             color: #503858;
-            font-family: 'Press Start 2P', cursive
+            font-family: 'Press Start 2P', cursive;
         }
 
         .btn {
@@ -332,7 +374,9 @@
             cursor: pointer;
             font-family: 'VT323', monospace;
             font-size: 15px;
-            transition: all .1s
+            transition: all .1s; 
+            justify-content: center!important;
+            align-content: center!important;
         }
 
         .dc:hover {
@@ -859,7 +903,7 @@
             font-family: 'Press Start 2P', cursive;
             font-size: 11px;
             margin-bottom: 8px;
-            text-align: center
+            text-align: center;
         }
 
         .ctx2 {
@@ -1162,9 +1206,9 @@
                         <div class="l" id="huL">100</div>
                     </div>
                 </div>
-                <div class="hp" id="clock"><span id="cI">☀️</span><span id="cT">06:00</span><span id="dC" style="font-size:10px;color:#503858">Day 1</span></div>
-                <div class="hp" id="wP"><span id="wI">☀️</span><span id="wT" style="font-size:12px">Clear</span></div>
-                <div class="hp" id="era"><span style="font-size:10px">ERA:</span><span id="eL" style="font-size:11px">PRESENT</span></div>
+                <div class="idk" id="clock"><span id="cI">☀️</span><span id="baby"><div class="idk" id="wP"><br><br><span id="cT">06:00</span><br><span id="dC" style="font-size:10px;color:#503858">Dia <b>1</b></span> <br><span id="wI">☀️</span><span id="wT" style="font-size:12px">Clear</span></div>
+                <div class="idk" id="era"><span style="font-size:10px">ERA:</span><span id="eL" style="font-size:11px">PRESENT</span></div></span></div>
+               
             </div>
 
             <div id="ip"></div>
@@ -1176,7 +1220,6 @@
                 <div id="dCh"></div>
                 <div id="dCt">▼ SPACE</div>
             </div>
-
             <div id="toolbar">
                 <div class="ts a" data-t="hand"><span class="k">1</span>👋</div>
                 <div class="ts" data-t="hammer"><span class="k">2</span>🔨</div>
@@ -7011,7 +7054,7 @@ function talkToNpc(npc) {
 
         // Clock & Survival
         function uCk() {
-            G.ck.t += .12;
+            G.ck.t += .006;
             if (G.ck.t >= 1440) {
                 G.ck.t -= 1440;
                 G.ck.day++;
@@ -11016,14 +11059,7 @@ function openHClMinigame(step, onComplete){
         const WATER_SPRS = {};
         (function() {
             const urls = {
-                w2: 'https://i.postimg.cc/8k2y4D2T/water2.gif',
-                wc2: 'https://i.postimg.cc/XNGH9XzZ/water-corner2.gif',
-                wc3: 'https://i.postimg.cc/mZzX7h5t/water-corner3.gif',
-                wc4: 'https://i.postimg.cc/HWcZbjhn/water-corner4.gif',
-                wc5: 'https://i.postimg.cc/tRZSF7MC/water-corner5.gif',
-                wc6: 'https://i.postimg.cc/c1g9f6bs/water-corner6.gif',
-                wc7: 'https://i.postimg.cc/FFdW01Br/water-corner7.gif',
-                wc8: 'https://i.postimg.cc/y6gQ0Wb6/water-corner8.gif',
+               
             };
             for (const [k, url] of Object.entries(urls)) {
                 const img = new Image();
